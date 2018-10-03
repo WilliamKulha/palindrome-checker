@@ -3,13 +3,19 @@
 var isPalindromeMessage = "Yes! Yes!<br>You've done it!<br>Wow! Now <em>that's </em> what I call a palindrome!"
 //store the message for a negative outcome as a variable.
 var notPalindromeMessage = "Boooo! We're sorry, but that's <em> not </em>a palindrome!"
-//Define a custom function to remove punctuation marks.
+//A custom function to remove punctuation marks.
 function punctuationless(stringToStrip) {
   return stringToStrip.replace(/[^A-z0-9_]/g,"");
 }
+//A custom function that splits a string before reversing it and joining it back into a string.
 function reversedString(string) {
   let lettersAsArray = string.split("");
   return lettersAsArray.reverse().join("");
+}
+function colorControl(color) {
+  $('#palindrome_results').empty();
+  $('#output').removeClass();
+  $('#output').addClass(color)
 }
 //A custom function that strips the original string, saves it for comparison, converts it into an array
 //then reverses that array before joining it back into a string to compare with the original string.
@@ -19,12 +25,12 @@ function stringAnalyzer(string) {
   let cleanString = punctuationless(string);
   let original = cleanString;
   let reversed = reversedString(cleanString);
-  $('#reversed_input').text($('#user_string').val());
+  $('#originalInput').text($('#user_string').val());
   if (original === reversed) {
-    $('#palindrome_results').empty();
+    colorControl('correct');
     $('#palindrome_results').html(isPalindromeMessage);
   } else if (original != reversed) {
-    $('#palindrome_results').empty();
+    colorControl('incorrect');
     $('#palindrome_results').html(notPalindromeMessage);
   }
 }

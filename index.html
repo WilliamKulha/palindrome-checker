@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Palindrome Checker</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="page-header">
+      <h2>Palindrome Checker</h2>
+    </div>
+    <div class="container">
+      <form id="user_input">
+        <div class="form-group">
+          <label for="user_string">Enter a word or phrase below to see if it's a palindrome.</label>
+          <input class="form-control" id="user_string" type="text" placeholder="a but tuba.">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Check</button>
+      </form>
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <div class="text-center">
+              <h5>Results:</h5>
+            </div>
+            <p id="reversed_input">
+            </p>
+            <span id="palindrome_results"></span>
+          </div>
+        </div>
+      </div class="col-sm-4">
+    </div>
+    </div>
+  </body>
+</html>
